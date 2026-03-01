@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navin Photography</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+        }
+
+        header {
+            background: #000;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .video-container video {
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        form input, form select {
+            background-color: #222;
+            color: #fff;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 12px;
+            width: 90%;
+            margin: 10px 0;
+            font-size: 16px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+
+        form input:focus, form select:focus {
+            border-color: #f39c12;
+            box-shadow: 0 0 8px rgba(243,156,18,0.7);
+            outline: none;
+        }
+
+        #booking, #review {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        #booking button, #review button {
+            padding: 10px 20px;
+            margin: 10px;
+            background: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #booking button:hover, #review button:hover {
+            background: #e67e22;
+        }
+#review input, 
+#review textarea {
+    background-color: #222;  /* dark background like booking form */
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 12px;
+    width: 90%;
+    margin: 10px 0;
+    font-size: 16px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+        #review textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        footer {
+            background: #000;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Navin Photography</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#videos">Videos</a>
+        <a href="#about">About</a>
+        <a href="#booking">Booking</a>
+        <a href="#review">Reviews</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<section id="home">
+    
+    <h2>Welcome</h2>
+    <p>Wedding | Street | Portrait | Event Photography</p>
+</section>
+
+<section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <img src="gallery/1.jpg.jpeg" alt="Gallery Image 1">
+        <img src="gallery/2.jpg.jpeg" alt="Gallery Image 2">
+        <img src="gallery/3.jpg.jpeg" alt="Gallery Image 3">
+        <img src="gallery/4.jpg.jpeg" alt="Gallery Image 4">
+        <img src="gallery/5.jpg.jpeg" alt="Gallery Image 5">
+    </div>
+</section>
+
+<section id="videos">
+    <h2>Wedding Videos</h2>
+    <div class="video-container">
+        <video controls>
+    <source src="/videos/1.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+
+<section id="booking">
+    <h2>Book Your Shoot</h2>
+    <form action="https://formsubmit.co/shivakumarhs446@gmail.com" method="POST">
+        <input type="text" name="Name" placeholder="Your Name" required><br>
+        <input type="text" name="Address" placeholder="Your Address" required><br>
+
+        <select name="Photography Type" required>
+            <option value="">Select Type</option>
+            <option>Wedding</option>
+            <option>Pre Wedding</option>
+            <option>Birthday</option>
+            <option>Event</option>
+        </select><br>
+
+        <input type="number" name="Fee From" placeholder="Fee From"><br>
+        <input type="number" name="Fee To" placeholder="Fee To"><br>
+
+        <button type="submit">Confirm Booking</button>
+    </form>
+</section>
+
+<!-- Review Section -->
+<section id="reviews" style="padding:40px 20px; background:#111; color:white; text-align:center;">
+    <div id="g_id_onload"
+     data-client_id="485103993636-0kho85gr0fcsv9lcbttvju1bgntlujqb.apps.googleusercontent.com"
+     data-callback="handleCredentialResponse">
+</div>
+  <h2 style="color:#f39c12;">Customer Reviews</h2>
+
+<div class="g_id_signin" data-type="standard"></div>
+
+  <!-- Google Sign-In -->
+
+
+  <!-- Review Input -->
+  <div id="reviewInput" style="display:none; margin-top:20px;">
+    <textarea id="reviewText" placeholder="Write your review..." style="width:90%; max-width:600px; padding:12px; border-radius:8px; border:none; background:#222; color:white; font-size:16px;"></textarea><br>
+    <button onclick="submitReview()" style="margin-top:10px; padding:10px 20px; background:#f39c12; border:none; color:white; border-radius:5px; cursor:pointer;">Submit Review</button>
+  </div>
+
+  <!-- Review List -->
+  <div id="reviewList" style="margin-top:40px; display:flex; flex-direction:column; gap:20px; align-items:center;"></div>
+</section>
+
+<!-- Google Sign-In API -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<script>
+let googleUserName = "";
+let googleUserPhoto = "";
+
+// Called when user signs in
+function handleCredentialResponse(response) {
+    const userObject = JSON.parse(atob(response.credential.split(".")[1]));
+    googleUserName = userObject.name;
+    googleUserPhoto = userObject.picture;
+
+    // Hide Google Sign-In button & show review box
+    document.getElementById("my-signin2").style.display = "none";
+    document.getElementById("reviewInput").style.display = "block";
+}
+
+// Initialize Google Sign-In
+window.onload = function() {
+    google.accounts.id.initialize({
+        client_id: "YOUR_GOOGLE_CLIENT_ID", // replace this
+        callback: handleCredentialResponse
+    });
+    google.accounts.id.renderButton(
+        document.getElementById("my-signin2"),
+        { theme: "outline", size: "large" }
+    );
+};
+
+// Submit review function
+function submitReview() {
+    const reviewText = document.getElementById("reviewText").value.trim();
+    if (!reviewText) {
+        alert("Please write a review first!");
+        return;
+    }
+
+    // Add review to review list
+    const reviewDiv = document.createElement("div");
+    reviewDiv.style.display = "flex";
+    reviewDiv.style.alignItems = "center";
+    reviewDiv.style.background = "#222";
+    reviewDiv.style.padding = "10px 15px";
+    reviewDiv.style.borderRadius = "10px";
+    reviewDiv.style.maxWidth = "600px";
+    reviewDiv.style.width = "90%";
+    reviewDiv.innerHTML = `
+        <img src="${googleUserPhoto}" style="width:50px; height:50px; border-radius:50%; margin-right:15px;">
+        <div style="text-align:left;">
+            <strong style="color:#f39c12;">${googleUserName}</strong>
+            <p style="margin:5px 0; color:white;">${reviewText}</p>
+        </div>
+    `;
+
+    document.getElementById("reviewList").prepend(reviewDiv);
+    document.getElementById("reviewText").value = "";
+
+    // Optional: send review to your server/Google Sheet
+    // fetch("YOUR_BACKEND_OR_SCRIPT_URL", {...})
+}
+</script>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>I am a passionate photographer capturing beautiful moments in weddings and special events.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: shivakumarhs446@gmail.com</p>
+    <p>Contact number : 8748984215</p>
+    <p> instagram id : naveen photography</p>
+</section>
+<script>
+
+
+function addReview()
+function handleCredentialResponse(response) {
+const data = parseJwt(response.credential);
+alert("Welcome " + data.name);
+
+// Auto fill review name
+document.getElementById("reviewName").value = data.name;
+}
+
+function parseJwt(token) {
+var base64Url = token.split('.')[1];
+var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+}).join(''));
+
+return JSON.parse(jsonPayload);
+}
+
+</script>
+
+
+
+
+<footer>
+    <p>© 2026 Navin Photography. All Rights Reserved.</p>
+</footer>
+
+
+</body>
+</html>
