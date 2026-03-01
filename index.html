@@ -236,7 +236,7 @@ function handleCredentialResponse(response) {
 // Initialize Google Sign-In
 window.onload = function() {
     google.accounts.id.initialize({
-        client_id: "YOUR_GOOGLE_CLIENT_ID", // replace this
+        client_id: "934584629447-pkg8n54m48333sk6md636hthf7i4rust.apps.googleusercontent.com", // replace this
         callback: handleCredentialResponse
     });
     google.accounts.id.renderButton(
@@ -315,7 +315,12 @@ return JSON.parse(jsonPayload);
 
 
 
-
+<script>
+    function handleCredentialResponse(response) {
+        console.log(response.credential);
+        alert("Login Successful!");
+    }
+</script>
 <footer>
     <p>© 2026 Navin Photography. All Rights Reserved.</p>
 </footer>
